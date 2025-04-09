@@ -9,7 +9,7 @@ const Navbar = () => {
           <li key={item} className="hover:underline cursor-pointer">{item}</li>
         ))}
       </ul>
-      <div className="flex gap-4 text-lg">
+      <div className="flex gap-4 text-lg ">
         <i className="ri-search-line"></i>
         <i className="ri-user-line"></i>
         <i className="ri-shopping-bag-line"></i>

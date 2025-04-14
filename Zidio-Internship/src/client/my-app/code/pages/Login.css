@@ -1,0 +1,29 @@
+.login-wrapper {
+  background: linear-gradient(120deg, #000428, #004e92);
+}
+
+.multiverse-card {
+  background-color: rgba(0, 0, 0, 0.85);
+  border: 2px solid #00aaff;
+  border-radius: 16px;
+  transition: all 0.3s ease-in-out;
+}
+
+.multiverse-card:hover {
+  box-shadow: 0 0 20px #00aaff;
+}
+
+
+.avatar-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease-in-out;
+}
+
+.avatar-img:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 10px #00aaff;
+}
+

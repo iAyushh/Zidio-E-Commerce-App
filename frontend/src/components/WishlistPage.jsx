@@ -10,7 +10,7 @@ const WishlistPage = () => {
 
   if (wishlist.length === 0) {
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen bg-gray-800 text-white p-4" >
+      <div className="flex flex-col items-center justify-center min-h-screen bg-opacity-0 text-white p-4" >
         {/* <img
           src="/assets/wishlist_empty.png" 
           alt="Empty Wishlist"
@@ -20,7 +20,7 @@ const WishlistPage = () => {
 
         </div>
         <br/>
-        <p className="text-xl font-semibold mb-2">Your wishlist is feeling lonely!</p>
+        <p className="text-xl font-bangers mb-2">Your wishlist is feeling lonely!</p>
         <p className="text-gray-300 mb-4">
             Add products to your wishlist, review them anytime and easily move to cart.</p>
         <Link to="/home" className="px-4 py-2 bg-yellow-600 text-gray-900 rounded hover:bg-teal-600 transition">

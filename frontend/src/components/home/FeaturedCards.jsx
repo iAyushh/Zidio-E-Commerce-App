@@ -39,15 +39,21 @@ const FeaturedCards = () => {
     wishlist.some((item) => item.id === product.id);
 
   const toggleWishlist = (product) => {
+    const heart = document.getElementById(`heart-${product.id}`);
+    if (heart) {
+      heart.classList.add("animate-ping-once");
+      setTimeout(() => heart.classList.remove("animate-ping-once"), 400);
+    }
+  
     isInWishlist(product)
-      ? removeFromWishlist(product.id) // ✅ FIXED
+      ? removeFromWishlist(product.id)
       : addToWishlist(product);
   };
-
+  
   return (
-    <section className="py-16 px-4 md:px-12 bg-gray-900">
+    <section className="py-16 px-4 md:px-12 bg-opacity-0 ">
       <h2
-        className="text-4xl font-extrabold text-center mb-12 tracking-wide text-white"
+        className="text-4xl font-bangers text-center mb-12 tracking-wide text-white relative"
         data-aos="fade-up"
       >
         FEATURED STYLES
@@ -57,15 +63,15 @@ const FeaturedCards = () => {
         {cards.map((card, index) => (
           <div
             key={card.id}
-            className="bg-gray-800 rounded-2xl shadow-xl overflow-hidden w-full max-w-xs transition-transform hover:scale-105 relative"
-            data-aos="zoom-in"
+            className="bg-gray-900 bg-opacity-90 backdrop-blur-sm rounded-2xl shadow-comic border-3 border-black overflow-hidden w-full max-w-xs transition-transform hover:scale-105 relative"
+            data-aos={index % 2 === 0 ? "fade-up-right" : "fade-up-left"}
             data-aos-delay={index * 150}
           >
             <div className="relative overflow-hidden">
               <img
                 src={card.image}
                 alt={card.title}
-                className="w-full h-60 object-cover rounded-md transition-transform duration-300 hover:scale-[1.5]"
+                className="w-full h-70 object-cover rounded-md transition-transform duration-300 hover:scale-[1.5]"
               />
 
               {/* Heart Button */}
@@ -74,6 +80,7 @@ const FeaturedCards = () => {
                 className="absolute top-2 right-2 text-xl z-10"
               >
                 <FaHeart
+                 id={`heart-${card.id}`}
                   className={`text-2xl bg-gray-500 p-1 rounded-full shadow hover:scale-110 transition-transform duration-300 ${
                     isInWishlist(card) ? "text-pink-700" : "text-white"
                   }`}
@@ -82,7 +89,7 @@ const FeaturedCards = () => {
             </div>
 
             <div className="p-5 text-center">
-              <h3 className="text-2xl font-bold text-yellow-600 mb-2">
+              <h3 className="text-2xl font-bangers text-yellow-600 mb-2">
                 {card.title}
               </h3>
               <p className="text-gray-300 text-sm">{card.desc}</p>

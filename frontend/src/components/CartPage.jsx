@@ -13,7 +13,7 @@ const CartPage = () => {
   };
 
   return (
-    <div className="p-6 text-white bg-gray-900 min-h-screen">
+    <div className="p-6 text-white bg-opacity-0 min-h-screen">
       {cart.length === 0 ? (
         <div className="flex flex-col items-center justify-center text-center mt-10">
           <div
@@ -21,7 +21,7 @@ const CartPage = () => {
             style={{ backgroundImage: `url(${CartImg})` }}
           ></div>
           <br />
-          <h2 className="text-xl font-semibold mb-2">Oops! Your cart is empty.</h2>
+          <h2 className="text-xl font-bangers mb-2">Oops! Your cart is empty.</h2>
           <p className="text-gray-300 mb-4">
             Add your favorite superhero T-shirts to the cart and make your wardrobe heroic!
           </p>

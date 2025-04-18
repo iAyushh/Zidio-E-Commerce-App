@@ -12,6 +12,7 @@ import Footer from "./components/home/Footer";
 
 import WishlistPage from "./components/WishlistPage";
 import CartPage from "./components/CartPage";
+import CheckoutSuccess from './pages/CheckoutSuccess';
 
 const HomePage = () => (
   <>
@@ -44,6 +45,7 @@ function App() {
             <Route path="/home" element={<HomePage />} />
             <Route path="/wishlist" element={<WishlistPage />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/checkout/success" element={<CheckoutSuccess />} />
           </Routes>
         </Router>
       </div>

@@ -1,0 +1,118 @@
+/* ./pages/Login.css */
+.login-container {
+  background-color: #000; /* Deep black background */
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #eee; /* Light text color */
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.1) 1px, transparent 1px),
+                    radial-gradient(circle, rgba(255, 255, 255, 0.05) 2px, transparent 2px);
+  background-size: 30px 30px, 60px 60px; /* Creates a subtle star field effect */
+}
+
+.login-form {
+  background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent dark background for the form */
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  text-align: center;
+  width: 400px; /* Adjust width as needed */
+}
+
+h2 {
+  color: #ddd;
+  margin-bottom: 30px;
+  font-size: 2.5em;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.form-group {
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  color: #ccc;
+  font-size: 1em;
+}
+
+input[type="text"],
+input[type="password"] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #333;
+  border-radius: 5px;
+  background-color: #222;
+  color: #eee;
+  font-size: 1em;
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+  outline: none;
+  border-color: #007bff; /* Highlight on focus */
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1em;
+  transition: background-color 0.3s ease;
+}
+
+.login-button {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.login-button:hover {
+  background-color: #0056b3;
+}
+
+.google-button {
+  background-color: #dc3545;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.google-button:hover {
+  background-color: #c82333;
+}
+
+.signup-button {
+  background-color: #6c757d;
+  color: #fff;
+  margin-top: 25px;
+}
+
+.signup-button:hover {
+  background-color: #5a6268;
+}
+
+.mt-3 {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.mt-2 {
+  margin-top: 10px;
+  text-align: center;
+}
+
+a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: #ddd;
+}

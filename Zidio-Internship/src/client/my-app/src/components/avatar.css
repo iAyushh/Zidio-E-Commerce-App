@@ -1,0 +1,157 @@
+/* avatar.css */
+
+/* Style for the main container of the avatar selection */
+.avatar-selection-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  z-index: 10;
+  width: 90%; /* Make it responsive width */
+  max-width: 500px; /* Limit maximum width on larger screens */
+  margin: 20px auto; /* Center the container */
+}
+
+/* Style for the background behind the avatars and text */
+/* .avatar-bg {
+  position: relative;
+  background-color: #181818;
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%; /* Make background responsive */
+ 
+
+/* Style for the heading */
+.avatar-selection-container h3 {
+  color: #eee;
+  margin-bottom: 20px;
+  text-align: center; /* Center the heading */
+}
+
+/* Style for the container of the avatar images */
+.avatar-selection-container .d-flex {
+  display: flex;
+  flex-wrap: wrap; /* Allow avatars to wrap to the next line on smaller screens */
+  gap: 10px; /* Adjust gap for responsiveness */
+  justify-content: center;
+  margin-bottom: 20px;
+  width: 90%; /* Responsive width for avatars container */
+}
+
+/* Style for individual avatar images */
+.avatar-selection-container .d-flex img {
+  border-radius: 50%;
+  cursor: pointer;
+  width: 50px; /* Slightly smaller for better wrapping */
+  height: 50px;
+  object-fit: cover;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease-in-out;
+  z-index: 20;
+}
+
+/* Style for the selected avatar */
+.avatar-selection-container .d-flex img[style*="border: 2px solid blue"] {
+  border-color: #007bff;
+}
+
+/* Hover effect for avatar images (slight upward movement) */
+.avatar-selection-container .d-flex img:hover {
+  border-color: #00c853; /* Example: Green border on hover */
+  opacity: 0.9; /* Slightly reduce opacity */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* Subtle shadow */
+  transform: translateY(-3px); /* Move the image up by 3 pixels */
+  transition: border-color 0.2s ease-in-out, opacity 0.2s ease-in-out, box-shadow 0.2s ease-in-out, transform 0.2s ease-in-out; /* Smooth transitions */
+}
+
+/* Style for the "Skip for Now" button */
+.avatar-selection-container button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  background-color: #385269;
+  color: #eee;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease-in-out;
+  width: 80%; /* Responsive width for the button */
+  max-width: 300px; /* Limit button width */
+}
+
+.avatar-selection-container button:hover {
+  background-color: #1e625d;
+}
+
+/* Starry background effect - Debugging with Color Change */
+.avatar-bg {
+  position: relative;
+  background-color: #181818; /* Ensure a dark background */
+  border-radius: 10px;
+  padding: 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.avatar-bg::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.5); /* Semi-transparent red */
+  opacity: 0.5; /* Start somewhat visible */
+  z-index: 1;
+  animation: colorPulse 2s linear infinite alternate;
+}
+
+.avatar-bg::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 255, 0.5); /* Semi-transparent blue */
+  opacity: 0.5; /* Start somewhat visible */
+  z-index: 1;
+  animation: colorPulse 3s linear infinite alternate-reverse; /* Different timing */
+}
+
+@keyframes colorPulse {
+  from {
+    opacity: 0.2;
+  }
+  to {
+    opacity: 0.8;
+  }
+}
+
+/* Media query for smaller screens (optional adjustments) */
+@media (max-width: 600px) {
+  .avatar-selection-container {
+    width: 95%;
+    margin: 15px auto;
+    padding: 15px;
+  }
+
+  .avatar-selection-container .d-flex {
+    gap: 8px;
+  }
+
+  .avatar-selection-container .d-flex img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .avatar-selection-container button {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
+}

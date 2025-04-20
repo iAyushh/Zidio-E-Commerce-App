@@ -1,10 +1,12 @@
 import { StrictMode, useEffect } from 'react';
 import { createRoot } from 'react-dom/client';
+// import { BrowserRouter} from 'react-router-dom';
 import './index.css';
 import App from './App.jsx';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-
+import { WishlistProvider } from "./context/wishlistContext";
+import { CartProvider } from './context/cartContext';
 const RootWithAOS = () => {
   useEffect(() => {
     AOS.init({
@@ -20,6 +22,10 @@ const RootWithAOS = () => {
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RootWithAOS />
+    <WishlistProvider>
+      <CartProvider>
+        <RootWithAOS />
+        </CartProvider>
+    </WishlistProvider>
   </StrictMode>
 );

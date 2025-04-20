@@ -12,7 +12,39 @@ function Signup() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [showAvatarSelection, setShowAvatarSelection] = useState(false);
   const [selectedAvatar, setSelectedAvatar] = useState(null);
+  const [errorMessage, setErrorMessage] = useState('');
   const navigate = useNavigate();
+
+  //  const handleAvatarSelect = (avatar) => {
+  //         setSelectedAvatar(avatar);
+  //     };
+
+      const handleSignupSubmit = async (event) => {
+              event.preventDefault();
+              const userData = { username, email, password, avatar: selectedAvatar };
+      
+              try {
+                  const response = await fetch('http://localhost:5000/api/auth/signup', {
+                      method: 'POST',
+                      headers: {
+                          'Content-Type': 'application/json',
+                      },
+                      body: JSON.stringify(userData),
+                  });
+      
+                  const data = await response.json();
+      
+                  if (response.ok) {
+                     // Signup successful, now show avatar selection
+                           setShowAvatarSelection(true);
+                  } else {
+                      setErrorMessage(data.message || 'Signup failed');
+                  }
+              } catch (error) {
+                  setErrorMessage('Network error during signup');
+                  console.error('Signup error:', error);
+              }
+          };
 
   useEffect(() => {
     console.log("Signup component mounted or updated.");
@@ -31,15 +63,15 @@ function Signup() {
     console.log("Current state:", { username, email, password, confirmPassword });
   };
 
-  const handleSignupSubmit = (event) => {
-    event.preventDefault();
-    if (password !== confirmPassword) {
-      alert("Passwords do not match");
-      return;
-    }
-    console.log("Signing up with:", { username, email, password });
-    setShowAvatarSelection(true);
-  };
+  // const handleSignupSubmit = (event) => {
+  //   event.preventDefault();
+  //   if (password !== confirmPassword) {
+  //     alert("Passwords do not match");
+  //     return;
+  //   }
+  //   console.log("Signing up with:", { username, email, password });
+  //   setShowAvatarSelection(true);
+  // };
 
   const handleAvatarSelect = (avatar) => {
     setSelectedAvatar(avatar);
@@ -75,6 +107,7 @@ function Signup() {
       <div className="signup-form-side">
         <div className="signup-form">
           <h2>Sign Up</h2>
+          {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
           <form onSubmit={handleSignupSubmit}>
             <div className="form-group">
               <label htmlFor="username">Username:</label>

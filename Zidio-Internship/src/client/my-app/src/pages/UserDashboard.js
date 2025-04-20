@@ -1,26 +1,54 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function UserDashboard() {
-  const avatar = localStorage.getItem("avatar");
-  const navigate = useNavigate();
+    const [user, setUser] = useState(null);
+    const navigate = useNavigate();
 
-  const handleLogout = () => {
-    localStorage.clear();
-    navigate("/");
-  };
+    useEffect(() => {
+        const fetchUserData = async () => {
+            const token = localStorage.getItem('authToken');
 
-  return (
-    <div className="container mt-5 text-center">
-      <h2>Welcome to your Dashboard</h2>
-      {avatar && <img src={avatar} alt="Avatar" className="rounded-circle mt-3" width={100} />}
-      <div>
-        <button className="btn btn-outline-danger mt-4" onClick={handleLogout}>
-          Logout
-        </button>
-      </div>
-    </div>
-  );
+            if (!token) {
+                navigate('/');
+                return;
+            }
+
+            try {
+                const response = await fetch('/api/users/me', {
+                    headers: {
+                        'Authorization': `Bearer ${token}`,
+                    },
+                });
+
+                if (response.ok) {
+                    const userData = await response.json();
+                    setUser(userData);
+                } else {
+                    localStorage.removeItem('authToken');
+                    navigate('/');
+                }
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+                // Handle network error appropriately
+            }
+        };
+
+        fetchUserData();
+    }, [navigate]);
+
+    if (!user) {
+        return <div>Loading user data...</div>;
+    }
+
+    return (
+        <div>
+            <h1>Welcome, {user.name}!</h1>
+            <p>Email: {user.email}</p>
+            {user.avatar && <img src={`/images/avatars/${user.avatar}`} alt="User Avatar" />}
+            {/* Add other dashboard content here */}
+        </div>
+    );
 }
 
 export default UserDashboard;

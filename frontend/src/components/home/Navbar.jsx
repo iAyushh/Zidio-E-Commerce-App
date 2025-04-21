@@ -45,6 +45,20 @@ const Navbar = () => {
             </span>
           )}
         </Link>
+
+        {/* ✅ Login & Signup Buttons */}
+                <Link
+                  to="/login"
+                  className="px-4 py-1 border border-white text-white rounded hover:bg-white hover:text-black transition duration-200"
+                >
+                  Login
+                </Link>
+                <Link
+                  to="/signup"
+                  className="px-4 py-1 bg-white text-black rounded hover:bg-gray-200 transition duration-200"
+                >
+                  Signup
+                </Link>
       </div>
     </nav>
   );

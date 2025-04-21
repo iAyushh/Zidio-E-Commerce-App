@@ -7,6 +7,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { WishlistProvider } from "./context/wishlistContext";
 import { CartProvider } from './context/cartContext';
+// eslint-disable-next-line react-refresh/only-export-components
 const RootWithAOS = () => {
   useEffect(() => {
     AOS.init({

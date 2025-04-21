@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import './Signup.css';
+import '../../../Zidio-Internship/src/client/my-app/src/pages/Signup.css';
 import logo from '../assets/zidio-logo.png';
-import Avatar from '../components/Avatar'; // Import the Avatar component
+import Avatar from '../../../Zidio-Internship/src/client/my-app/src/components/Avatar'; // Import the Avatar component
 
 function Signup() {
   const usernameInputRef = useRef(null);
@@ -77,13 +77,13 @@ function Signup() {
     setSelectedAvatar(avatar);
     console.log("Selected avatar:", avatar);
     localStorage.setItem("token", "newUserTokenWithAvatar");
-    navigate("/dashboard");
+    navigate("/");
   };
 
   const handleSkipAvatar = () => {
     console.log("Skipping avatar selection");
     localStorage.setItem("token", "newUserTokenSkippedAvatar");
-    navigate("/dashboard");
+    navigate("/");
   };
 
   if (showAvatarSelection) {

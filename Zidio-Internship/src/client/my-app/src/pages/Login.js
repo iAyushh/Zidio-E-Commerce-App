@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import './Login.css'; // Import the CSS file
+import '../../../Zidio-Internship/src/client/my-app/src/pages/Login.css'; // Import the CSS file
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -12,7 +12,7 @@ function Login() {
     // In a real application, you would send these credentials to your backend
     if (username === "testuser" && password === "password") {
       localStorage.setItem("token", "mocked-jwt");
-      navigate("/dashboard");
+      navigate("/");
     } else {
       alert("Invalid credentials");
     }
@@ -20,7 +20,7 @@ function Login() {
 
   const handleGoogleLogin = () => {
     localStorage.setItem("token", "google-jwt");
-    navigate("/dashboard");
+    navigate("/");
   };
 
   const goToSignup = () => {

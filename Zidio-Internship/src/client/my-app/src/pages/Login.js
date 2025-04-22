@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import '../../../Zidio-Internship/src/client/my-app/src/pages/Login.css'; // Import the CSS file
+import './Login.css'; // Import the CSS file
 
 function Login() {
   const [username, setUsername] = useState("");

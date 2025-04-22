@@ -15,8 +15,8 @@ import CartPage from "./components/CartPage";
 import CheckoutSuccess from './pages/CheckoutSuccess';
 
 
-import Login from '../../Zidio-Internship/src/client/my-app/src/pages/Login';
-import Signup from '../../Zidio-Internship/src/client/my-app/src/pages/Signup';
+// import Login from '../../Zidio-Internship/src/client/my-app/src/pages/Login';
+// import Signup from '../../Zidio-Internship/src/client/my-app/src/pages/Signup';
 
 
 const HomePage = () => (
@@ -51,8 +51,8 @@ function App() {
             <Route path="/wishlist" element={<WishlistPage />} />
             <Route path="/cart" element={<CartPage />} />
             <Route path="/checkout/success" element={<CheckoutSuccess />} />
-            <Route path="../../Zidio-Internship/src/client/my-app/src/pages/Login.js" element={<Login />} />
-            <Route path="../../Zidio-Internship/src/client/my-app/src/pages/Signup.js" element={<Signup />} />
+            {/* <Route path="../../Zidio-Internship/src/client/my-app/src/pages/Login.js" element={<Login />} />
+            <Route path="../../Zidio-Internship/src/client/my-app/src/pages/Signup.js" element={<Signup />} /> */}
             
           </Routes>
         </Router>

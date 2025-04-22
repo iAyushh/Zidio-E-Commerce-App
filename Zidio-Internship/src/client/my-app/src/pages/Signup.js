@@ -1,8 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { useNavigate, Link } from 'react-router-dom';
-import '../../../Zidio-Internship/src/client/my-app/src/pages/Signup.css';
+import './Signup.css';
 import logo from '../assets/zidio-logo.png';
-import Avatar from '../../../Zidio-Internship/src/client/my-app/src/components/Avatar'; // Import the Avatar component
+import Avatar from '../components/Avatar'; // Import the Avatar component
 
 function Signup() {
   const usernameInputRef = useRef(null);

@@ -16,7 +16,7 @@ const Navbar = () => {
       <div className="text-2xl font-bangers tracking-widest">ZIDIO STORE</div>
       
       <ul className="hidden md:flex gap-8 text-md font-bangers">
-        {["What's New", "Home", "Shop", "Collection", "About", "Contact"].map((item) => (
+        {["What's New", "Shop", "Collection", "About", "Contact"].map((item) => (
           <li key={item} className="hover:underline cursor-pointer">{item}</li>
         ))}
       </ul>
@@ -48,13 +48,13 @@ const Navbar = () => {
 
         {/* ✅ Login & Signup Buttons */}
                 <Link
-                  to="http://localhost:55736/index.html"
+                  to="/login"
                   className="px-4 py-1 border border-white text-white rounded hover:bg-white hover:text-black transition duration-200"
                 >
                   Login
                 </Link>
                 <Link
-                  to="http://localhost:55736/index.html"
+                  to="/signup"
                   className="px-4 py-1 bg-white text-black rounded hover:bg-gray-200 transition duration-200"
                 >
                   Signup

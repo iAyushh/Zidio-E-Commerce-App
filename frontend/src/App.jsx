@@ -13,10 +13,11 @@ import Footer from "./components/home/Footer";
 import WishlistPage from "./components/WishlistPage";
 import CartPage from "./components/CartPage";
 import CheckoutSuccess from './pages/CheckoutSuccess';
+import LoginPage from "./components/LoginPage";
+import SignupPage from "./components/SignupPage";
 
 
-// import Login from '../../Zidio-Internship/src/client/my-app/src/pages/Login';
-// import Signup from '../../Zidio-Internship/src/client/my-app/src/pages/Signup';
+
 
 
 const HomePage = () => (
@@ -50,9 +51,10 @@ function App() {
             <Route path="/home" element={<HomePage />} />
             <Route path="/wishlist" element={<WishlistPage />} />
             <Route path="/cart" element={<CartPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="/signup" element={<SignupPage />} />
             <Route path="/checkout/success" element={<CheckoutSuccess />} />
-            {/* <Route path="../../Zidio-Internship/src/client/my-app/src/pages/Login.js" element={<Login />} />
-            <Route path="../../Zidio-Internship/src/client/my-app/src/pages/Signup.js" element={<Signup />} /> */}
+
             
           </Routes>
         </Router>

@@ -4,14 +4,7 @@ import { fileURLToPath, URL } from 'node:url';
 
 export default defineConfig({
   plugins: [react()],
-  server: {
-    port: 8080,
-    host: 'localhost',
-    strictPort: true,
-    watch: {
-      ignored: ['**/public/auth/**'], // Keep this for the watcher
-    },
-  },
+ 
   publicDir: 'public',
   build: {
     rollupOptions: {

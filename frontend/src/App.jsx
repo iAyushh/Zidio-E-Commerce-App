@@ -1,9 +1,19 @@
+import React from 'react';
+import { BrowserRouter} from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
 
- function App() {
+import AppRoutes from './routes/AppRoutes';
+
+const App = () => {
   return (
-    <h1 className=" flex justify-center items-center h-screen font-bold font-xxl">
-      Zidio E-commerce App!!
-    </h1>
-  )
-}
+    <>
+    <Toaster position="top-center" />
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+
+    </>
+  );
+};
+
 export default App;

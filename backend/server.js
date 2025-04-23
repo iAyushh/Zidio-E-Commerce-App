@@ -3,23 +3,27 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 import cors from "cors";
 
-// Load environment variables from .env file
+// Route imports
+import productRoutes from "./routes/productRoutes.js";
+import couponRoutes from "./routes/couponRoutes.js"; // ✅ Corrected name
+
 dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
-// Connect to MongoDB
+// Routes
+app.use('/api/products', productRoutes);
+app.use('/api/coupons', couponRoutes); // ✅ Corrected import & usage
+
+app.get('/', (req, res) => {
+  res.send("API is running...");
+});
 
 mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("⚠ MongoDB connection error:", err));
 
-
-  app.get('/', (req, res) =>{
-    res.send("API is running...");
-  });
-
-  const PORT = process.env.PORT||5000
-  app.listen(PORT , () => console.log(`✅ Server running on port ${process.env.PORT}`));
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));

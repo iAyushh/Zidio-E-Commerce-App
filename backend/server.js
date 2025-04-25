@@ -5,17 +5,29 @@ import cors from "cors";
 import Razorpay from "razorpay"; 
 import crypto from 'crypto';
 
-// Load environment variables from .env file
+// Route imports
+import productRoutes from "./routes/productRoutes.js";
+import couponRoutes from "./routes/couponRoutes.js"; // ✅ Corrected name
+
 dotenv.config();
 
 const app = express();
 app.use(cors());
 app.use(express.json());
 
+<<<<<<< HEAD
 // Create Razorpay instance with fallback for development
 const razorpay = new Razorpay({
   key_id: process.env.RAZORPAY_API_KEY,
   key_secret: process.env.RAZORPAY_API_SECRET 
+=======
+// Routes
+app.use('/api/products', productRoutes);
+app.use('/api/coupons', couponRoutes); // ✅ Corrected import & usage
+
+app.get('/', (req, res) => {
+  res.send("API is running...");
+>>>>>>> ADMIN
 });
 
 // Add console log to debug
@@ -100,6 +112,7 @@ mongoose.connect(process.env.MONGO_URI)
   .then(() => console.log("✅ MongoDB Connected"))
   .catch((err) => console.error("⚠ MongoDB connection error:", err));
 
+<<<<<<< HEAD
 app.get('/', (req, res) => {
   res.send("API is running...");
 });
@@ -108,3 +121,7 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT, () =>
   console.log(`✅ Server running on http://localhost:${PORT}`)
 );
+=======
+const PORT = process.env.PORT || 5000;
+app.listen(PORT, () => console.log(`✅ Server running on port ${PORT}`));
+>>>>>>> ADMIN

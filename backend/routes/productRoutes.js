@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import express, { Router } from 'express';
 import { getKey, processPayment } from '../controllers/productController';
 const router = express.Router();
@@ -5,3 +6,33 @@ router.route('/payment/process').post(processPayment);
 router.route('/getKey').get(getKey)
 
 export default router;
+=======
+// productRoutes.js
+import express from 'express';
+import {
+  createProduct,
+  getAllProducts,
+  deleteProduct,
+  getProductById,
+  updateProduct,
+} from '../controllers/productController.js';
+
+const router = express.Router();
+
+// POST /api/products/admin        (Create product)
+router.post('/', createProduct);
+
+// GET /api/products               (Get all products)
+router.get('/', getAllProducts);
+
+// GET /api/products/:id           (Get product by ID)
+router.get('/:id', getProductById);
+
+// PUT /api/products/:id           (Update product)
+router.put('/:id', updateProduct);
+
+// DELETE /api/products/:id        (Delete product)
+router.delete('/:id', deleteProduct);
+
+export default router;
+>>>>>>> ADMIN

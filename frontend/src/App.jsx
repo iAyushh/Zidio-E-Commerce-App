@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import AOS from "aos";
@@ -64,3 +65,24 @@ function App() {
 }
 
 export default App;
+=======
+import React from 'react';
+import { BrowserRouter} from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+
+import AppRoutes from './routes/AppRoutes';
+
+const App = () => {
+  return (
+    <>
+    <Toaster position="top-center" />
+    <BrowserRouter>
+      <AppRoutes />
+    </BrowserRouter>
+
+    </>
+  );
+};
+
+export default App;
+>>>>>>> ADMIN

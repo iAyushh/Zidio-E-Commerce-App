@@ -8,19 +8,15 @@ export const WishlistProvider = ({ children }) => {
   const [wishlist, setWishlist] = useState([]);
 
   const addToWishlist = (product) => {
-    setWishlist((prev) => {
-      if (!prev.find((item) => item.id === product.id)) {
-        return [...prev, product];
-      }
-      return prev;
-    });
+    setWishlist(prev => [...prev, product]);
   };
+  
 
-  const removeFromWishlist = (product) => {
-    setWishlist((prev) =>
-      prev.filter((item) => item.id !== product.id)
-    );
+  const removeFromWishlist = (productId) => {
+    setWishlist(prev => prev.filter(item => item.id !== productId));
   };
+  
+
 
   return (
     <WishlistContext.Provider

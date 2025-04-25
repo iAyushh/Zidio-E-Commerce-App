@@ -75,7 +75,7 @@ const FeaturedCards = () => {
               />
 
               {/* Heart Button */}
-              <button
+              {/* <button
                 onClick={() => toggleWishlist(card)}
                 className="absolute top-2 right-2 text-xl z-10"
               >
@@ -85,7 +85,7 @@ const FeaturedCards = () => {
                     isInWishlist(card) ? "text-pink-700" : "text-white"
                   }`}
                 />
-              </button>
+              </button> */}
             </div>
 
             <div className="p-5 text-center">

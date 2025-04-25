@@ -1,21 +1,25 @@
 import React, { useState } from "react";
 import { FaHeart } from "react-icons/fa";
 import { useWishlist } from "../../context/wishlistContext";
+import { useCart } from "../../context/cartContext";
+
 
 const ProductSlider = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [selectedProduct, setSelectedProduct] = useState(null);
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
+  const { addToCart } = useCart();
+
 
   const products = [
-    { id: 1, title: "Barca", price: "₹699.00", image: "/images/product1.webp" },
-    { id: 2, title: "Matis", price: "₹799.00", image: "/images/product2.webp" },
-    { id: 3, title: "Greg", price: "₹999.00", image: "/images/product3.webp" },
-    { id: 4, title: "Matis", price: "₹799.00", image: "/images/product2.webp" },
-    { id: 5, title: "Matis", price: "₹799.00", image: "/images/product3.webp" },
-    { id: 6, title: "Mika", price: "₹699.00", image: "/images/product1.webp" },
-    { id: 7, title: "Mika", price: "₹799.00", image: "/images/product4.webp" },
-    { id: 8, title: "Mika", price: "₹799.00", image: "/images/product4.webp" },
+    { id: "1", title: "Barca", price: "₹699.00", image: "/images/product1.webp" },
+    { id: "2", title: "Matis", price: "₹799.00", image: "/images/product2.webp" },
+    { id: "3", title: "Greg", price: "₹999.00", image: "/images/product3.webp" },
+    { id: "4", title: "Matis", price: "₹799.00", image: "/images/product2.webp" },
+    { id: "5", title: "Matis", price: "₹799.00", image: "/images/product3.webp" },
+    { id: "6", title: "Mika", price: "₹699.00", image: "/images/product1.webp" },
+    { id: "7", title: "Mika", price: "₹799.00", image: "/images/product4.webp" },
+    { id: "8", title: "Mika", price: "₹799.00", image: "/images/product4.webp" },
   ];
 
   const isInWishlist = (productId) => {
@@ -88,7 +92,9 @@ const ProductSlider = () => {
             />
             <h2 className="text-2xl font-semibold text-white">{selectedProduct.title}</h2>
             <p className="text-yellow-600">{selectedProduct.price}</p>
-            <button className="mt-4 text-white bg-yellow-500 py-2 px-4 rounded-full hover:bg-yellow-600 transition-colors">
+            <button className="mt-4 text-white bg-yellow-500 py-2 px-4 rounded-full hover:bg-yellow-600 transition-colors"
+            onClick={()=> addToCart(selectedProduct)}
+            >
               Add to Cart
             </button>
           </div>
